@@ -17,6 +17,7 @@ export default function RootLayout() {
   return (
     <Stack
       screenOptions={{
+        headerShown: false,
         headerTintColor: colors.brand.purple,
         headerTitleStyle: {
           color: colors.neutral.textPrimary,
