@@ -25,6 +25,13 @@ In the output, you'll find options to open the app in a
 
 You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
+## Styling
+
+This project uses NativeWind v5 RC with Tailwind CSS v4. Global styles are in
+`global.css`, imported by `app/_layout.tsx`; Metro and PostCSS are configured in
+`metro.config.js` and `postcss.config.mjs`. Use `className` on React Native
+components for Tailwind utilities. See the [NativeWind v5 installation guide](https://www.nativewind.dev/v5/getting-started/installation).
+
 ## Get a fresh project
 
 When you're ready, run:

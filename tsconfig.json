@@ -3,8 +3,14 @@
   "compilerOptions": {
     "strict": true,
     "paths": {
+      "@/theme": [
+        "./theme/index.ts"
+      ],
       "@/*": [
         "./src/*"
+      ],
+      "@/theme/*": [
+        "./theme/*"
       ],
       "@/assets/*": [
         "./assets/*"
@@ -15,6 +21,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".expo/types/**/*.ts",
-    "expo-env.d.ts"
+    "expo-env.d.ts",
+    "nativewind-env.d.ts"
   ]
 }
