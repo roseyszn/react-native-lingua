@@ -6,6 +6,12 @@
       "@/theme": [
         "./theme/index.ts"
       ],
+      "@/constants/*": [
+        "./constants/*"
+      ],
+      "@/data/*": [
+        "./data/*"
+      ],
       "@/*": [
         "./src/*"
       ],
