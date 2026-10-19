@@ -1,12 +1,22 @@
-import { Stack, useRouter } from "expo-router";
+import { useAuth } from "@clerk/expo";
+import { Redirect, Stack, useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Image, Pressable, Text, View } from "react-native";
 import { images } from "../constants/images";
 
 export default function Onboarding() {
+  const { isLoaded, isSignedIn } = useAuth();
   const insets = useSafeAreaInsets();
   const router = useRouter();
+
+  if (!isLoaded) {
+    return null;
+  }
+
+  if (isSignedIn) {
+    return <Redirect href="/" />;
+  }
 
   return (
     <View className="flex-1 bg-white px-7" style={{ paddingTop: insets.top }}>
@@ -68,7 +78,7 @@ export default function Onboarding() {
       >
         <Pressable
           accessibilityRole="button"
-          onPress={() => router.replace("/")}
+          onPress={() => router.push("/sign-up")}
           className="h-[76px] flex-row items-center justify-center rounded-[24px] bg-lingua-deep-purple"
         >
           <Text className="font-poppins-semibold text-[20px] text-white">
