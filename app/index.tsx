@@ -1,10 +1,11 @@
 import { useAuth, useClerk } from "@clerk/expo";
-import { Redirect } from "expo-router";
+import { Redirect, useRouter } from "expo-router";
 import { Alert, Pressable, Text, View } from "react-native";
 
 export default function Index() {
   const { isLoaded, isSignedIn } = useAuth();
   const { signOut } = useClerk();
+  const router = useRouter();
 
   if (!isLoaded) {
     return null;
@@ -26,8 +27,19 @@ export default function Index() {
   }
 
   return (
-    <View className="flex-1 items-center justify-center gap-8 bg-background px-6">
+    <View className="flex-1 items-center justify-center gap-6 bg-background px-6">
       <Text className="h1 text-center text-lingua-purple">Lingua</Text>
+
+      <Pressable
+        accessibilityRole="button"
+        onPress={() => router.push("/language-selection")}
+        className="items-center rounded-2xl bg-lingua-blue px-8 py-4"
+      >
+        <Text className="font-poppins-semibold text-base text-white">
+          Choose language
+        </Text>
+      </Pressable>
+
       <Pressable
         accessibilityRole="button"
         onPress={() => void handleSignOut()}

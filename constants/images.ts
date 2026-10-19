@@ -5,4 +5,5 @@ export const images = {
   googleLogo: require("../assetss/images/google.png"),
   facebookLogo: require("../assetss/images/facebook.png"),
   appleLogo: require("../assetss/images/apple.png"),
+  earth: require("../assetss/images/earth.png"),
 };
